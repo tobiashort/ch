@@ -1,0 +1,15 @@
+package canton
+
+var {{ .Abbr }} = Canton {
+	Name: "{{ .Name }}",
+	Abbr: "{{ .Abbr }}",
+	Polygons: [][]Coordinates{
+		{{range .Polygons -}}
+		{
+			{{range . -}}
+			{ North: {{ .North }}, West: {{ .West }} },
+			{{end -}}
+		},
+		{{end -}}
+	},
+}
