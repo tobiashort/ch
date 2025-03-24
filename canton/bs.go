@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var BS = Canton{
 	Name: "Basel-Stadt",
 	Abbr: "BS",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 7.6339645, West: 47.56123},
 			{North: 7.632712, West: 47.561516},

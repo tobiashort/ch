@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var ZG = Canton{
 	Name: "Zug",
 	Abbr: "ZG",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.493054, West: 47.100178},
 			{North: 8.493743, West: 47.11373},

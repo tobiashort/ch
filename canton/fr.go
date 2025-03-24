@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var FR = Canton{
 	Name: "Fribourg",
 	Abbr: "FR",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 7.0908594, West: 46.90382},
 			{North: 7.0908437, West: 46.903854},

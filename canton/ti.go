@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var TI = Canton{
 	Name: "Ticino",
 	Abbr: "TI",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.384717, West: 46.45216},
 			{North: 8.384739, West: 46.452312},

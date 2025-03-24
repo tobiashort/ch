@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var GR = Canton{
 	Name: "Graubünden",
 	Abbr: "GR",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.877053, West: 46.812912},
 			{North: 8.877826, West: 46.813084},

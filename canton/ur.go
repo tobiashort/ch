@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var UR = Canton{
 	Name: "Uri",
 	Abbr: "UR",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.877053, West: 46.812912},
 			{North: 8.876698, West: 46.812668},

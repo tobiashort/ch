@@ -1,21 +1,47 @@
 package main
 
 import (
-	rl "github.com/gen2brain/raylib-go/raylib"
+	. "github.com/gen2brain/raylib-go/raylib"
 	"github.com/tobiashort/cantons/canton"
+	. "github.com/tobiashort/cantons/coord"
+	"github.com/tobiashort/cantons/globals"
 )
 
-//go:generate go build -o canton/gen/cantongen canton/gen/cantongen.go
-//go:generate canton/gen/cantongen
+//go:generate find canton -maxdepth 1 -regex "canton/[a-z][a-z].go" -delete
+//go:generate rm -f canton/draw_all.go
+//go:generate go run canton/gen/cantongen.go
 
 func main() {
-	rl.SetConfigFlags(rl.FlagWindowResizable)
-	rl.InitWindow(800, 600, "Cantons of Switzerland")
-	for !rl.WindowShouldClose() {
-		rl.BeginDrawing()
-		rl.ClearBackground(rl.Black)
+	SetConfigFlags(FlagWindowResizable)
+	InitWindow(globals.InitWidth, globals.InitHeight, globals.Title)
+	for !WindowShouldClose() {
+		// Zooming
+		wheelDelta := GetMouseWheelMove()
+		if wheelDelta != 0 {
+			xy := GetMousePosition()
+			coord := XYtoCoord(xy)
+			globals.Zoom += wheelDelta * globals.ScrollSpeed
+			if globals.Zoom < globals.MinZoom {
+				globals.Zoom = globals.MinZoom
+			}
+			xyAfter := CoordToXY(coord)
+			dx := xy.X - xyAfter.X
+			dy := xy.Y - xyAfter.Y
+			globals.OffsetX -= dx
+			globals.OffsetY -= dy
+		}
+
+		// Paning
+		if IsMouseButtonDown(MouseButtonLeft) {
+			mouseDelta := GetMouseDelta()
+			globals.OffsetX -= mouseDelta.X
+			globals.OffsetY -= mouseDelta.Y
+		}
+
+		BeginDrawing()
+		ClearBackground(Black)
 		canton.DrawAll()
-		rl.EndDrawing()
+		EndDrawing()
 	}
-	rl.CloseWindow()
+	CloseWindow()
 }

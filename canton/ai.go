@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var AI = Canton{
 	Name: "Appenzell Innerrhoden",
 	Abbr: "AI",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 9.343272, West: 47.249393},
 			{North: 9.34243, West: 47.24988},

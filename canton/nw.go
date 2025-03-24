@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var NW = Canton{
 	Name: "Nidwalden",
 	Abbr: "NW",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.470844, West: 46.85485},
 			{North: 8.469994, West: 46.854923},

@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var GL = Canton{
 	Name: "Glarus",
 	Abbr: "GL",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.877053, West: 46.812912},
 			{North: 8.8768835, West: 46.813454},

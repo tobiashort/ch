@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var TG = Canton{
 	Name: "Thurgau",
 	Abbr: "TG",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.669434, West: 47.68485},
 			{North: 8.669536, West: 47.684845},

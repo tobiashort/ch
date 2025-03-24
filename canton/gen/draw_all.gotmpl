@@ -1,0 +1,7 @@
+package canton
+
+func DrawAll() {
+	{{ range . -}}
+	Draw({{ .Abbr }})
+	{{end -}}
+}

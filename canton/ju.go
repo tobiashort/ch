@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var JU = Canton{
 	Name: "Jura",
 	Abbr: "JU",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 7.3759513, West: 47.414104},
 			{North: 7.377445, West: 47.413418},

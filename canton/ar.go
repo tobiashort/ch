@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var AR = Canton{
 	Name: "Appenzell Ausserrhoden",
 	Abbr: "AR",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 9.5095625, West: 47.394695},
 			{North: 9.509073, West: 47.39459},

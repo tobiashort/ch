@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var LU = Canton{
 	Name: "Luzern",
 	Abbr: "LU",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.493054, West: 47.100178},
 			{North: 8.476271, West: 47.106136},

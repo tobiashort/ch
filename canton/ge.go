@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var GE = Canton{
 	Name: "Genève",
 	Abbr: "GE",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 6.219551, West: 46.311886},
 			{North: 6.241515, West: 46.30437},

@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var {{ .Abbr }} = Canton {
 	Name: "{{ .Name }}",
 	Abbr: "{{ .Abbr }}",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{{range .Polygons -}}
 		{
 			{{range . -}}

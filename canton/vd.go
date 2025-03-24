@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var VD = Canton{
 	Name: "Vaud",
 	Abbr: "VD",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 7.071243, West: 46.20101},
 			{North: 7.066214, West: 46.19987},

@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var SG = Canton{
 	Name: "St. Gallen",
 	Abbr: "SG",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 9.530733, West: 47.270576},
 			{North: 9.530395, West: 47.26968},

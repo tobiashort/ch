@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var SO = Canton{
 	Name: "Solothurn",
 	Abbr: "SO",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 7.9568434, West: 47.455215},
 			{North: 7.956919, West: 47.455223},

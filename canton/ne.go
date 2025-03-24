@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var NE = Canton{
 	Name: "Neuchâtel",
 	Abbr: "NE",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 6.858402, West: 47.16539},
 			{North: 6.858595, West: 47.16551},

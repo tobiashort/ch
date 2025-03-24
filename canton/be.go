@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var BE = Canton{
 	Name: "Bern",
 	Abbr: "BE",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.046943, West: 46.787113},
 			{North: 8.050287, West: 46.788338},

@@ -1,3 +1,5 @@
+//go:build ignore
+
 package main
 
 import (
@@ -9,6 +11,7 @@ import (
 	"text/template"
 
 	. "github.com/tobiashort/cantons/canton"
+	. "github.com/tobiashort/cantons/coord"
 )
 
 type Geometry struct {
@@ -107,14 +110,14 @@ func main() {
 			canton = Canton{}
 			canton.Name = feature.Properties.NAME
 			canton.Abbr = nameToAbbr(canton.Name)
-			canton.Polygons = make([][]Coordinates, 0)
+			canton.Polygons = make([][]Coord, 0)
 		}
 		for _, geometry := range feature.Geometry.Coordinates {
-			polygon := make([]Coordinates, 0)
+			polygon := make([]Coord, 0)
 			for _, northWest := range geometry {
 				north := northWest[0]
 				west := northWest[1]
-				polygon = append(polygon, Coordinates{North: north, West: west})
+				polygon = append(polygon, Coord{North: north, West: west})
 			}
 			canton.Polygons = append(canton.Polygons, polygon)
 			cantons[canton.Name] = canton
@@ -122,10 +125,11 @@ func main() {
 	}
 
 	tmpl, err := template.ParseFiles("canton/gen/canton.gotmpl")
+	assertNil(err)
 	for _, canton := range cantons {
 		fileName := fmt.Sprintf("canton/%s.go", strings.ToLower(canton.Abbr))
 		fmt.Println(fileName)
-		file, err := os.OpenFile(fileName, os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0644)
+		file, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
 		assertNil(err)
 		err = tmpl.Execute(file, canton)
 		assertNil(err)
@@ -134,5 +138,19 @@ func main() {
 		if err != nil {
 			panic(string(cmdOut))
 		}
+	}
+
+	tmpl, err = template.ParseFiles("canton/gen/draw_all.gotmpl")
+	assertNil(err)
+	fileName := fmt.Sprintf("canton/draw_all.go")
+	fmt.Println(fileName)
+	file, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+	assertNil(err)
+	err = tmpl.Execute(file, cantons)
+	assertNil(err)
+	cmd := exec.Command("gofmt", "-w", fileName)
+	cmdOut, err := cmd.CombinedOutput()
+	if err != nil {
+		panic(string(cmdOut))
 	}
 }

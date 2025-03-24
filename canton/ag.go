@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var AG = Canton{
 	Name: "Aargau",
 	Abbr: "AG",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 7.9568434, West: 47.455215},
 			{North: 7.9564886, West: 47.455536},

@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var ZH = Canton{
 	Name: "Zürich",
 	Abbr: "ZH",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.669434, West: 47.68485},
 			{North: 8.669454, West: 47.684124},

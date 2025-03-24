@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var OW = Canton{
 	Name: "Obwalden",
 	Abbr: "OW",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.046943, West: 46.787113},
 			{North: 8.049346, West: 46.78823},

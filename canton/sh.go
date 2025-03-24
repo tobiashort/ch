@@ -1,9 +1,13 @@
 package canton
 
+import (
+	. "github.com/tobiashort/cantons/coord"
+)
+
 var SH = Canton{
 	Name: "Schaffhausen",
 	Abbr: "SH",
-	Polygons: [][]Coordinates{
+	Polygons: [][]Coord{
 		{
 			{North: 8.728024, West: 47.69276},
 			{North: 8.727349, West: 47.692757},
