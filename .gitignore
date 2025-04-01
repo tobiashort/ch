@@ -1,3 +1,4 @@
 .DS_Store
-canton/gen/cantongen
+.ignore
+canton/gen/gen
 cantons
