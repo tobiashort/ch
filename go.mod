@@ -1,4 +1,4 @@
-module github.com/tobiashort/cantons
+module github.com/tobiashort/ch
 
 go 1.24.1
 

@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	. "github.com/tobiashort/cantons/coord"
+	. "github.com/tobiashort/ch/coord"
 )
 
 func TestCoordToXYtoCoord(t *testing.T) {

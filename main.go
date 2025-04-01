@@ -2,9 +2,9 @@ package main
 
 import (
 	. "github.com/gen2brain/raylib-go/raylib"
-	"github.com/tobiashort/cantons/canton"
-	. "github.com/tobiashort/cantons/coord"
-	"github.com/tobiashort/cantons/globals"
+	"github.com/tobiashort/ch/canton"
+	. "github.com/tobiashort/ch/coord"
+	"github.com/tobiashort/ch/globals"
 )
 
 //go:generate find canton -maxdepth 1 -regex "canton/[a-z][a-z].go" -delete

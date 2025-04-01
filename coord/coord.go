@@ -2,7 +2,7 @@ package coord
 
 import (
 	rl "github.com/gen2brain/raylib-go/raylib"
-	"github.com/tobiashort/cantons/globals"
+	"github.com/tobiashort/ch/globals"
 )
 
 type Coord struct {

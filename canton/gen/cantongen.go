@@ -10,8 +10,8 @@ import (
 	"strings"
 	"text/template"
 
-	. "github.com/tobiashort/cantons/canton"
-	. "github.com/tobiashort/cantons/coord"
+	. "github.com/tobiashort/ch/canton"
+	. "github.com/tobiashort/ch/coord"
 )
 
 type Geometry struct {

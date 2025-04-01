@@ -2,7 +2,7 @@ package canton
 
 import (
 	rl "github.com/gen2brain/raylib-go/raylib"
-	. "github.com/tobiashort/cantons/coord"
+	. "github.com/tobiashort/ch/coord"
 )
 
 func Draw(canton Canton) {
