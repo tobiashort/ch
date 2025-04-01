@@ -9,7 +9,7 @@ import (
 
 //go:generate find canton -maxdepth 1 -regex "canton/[a-z][a-z].go" -delete
 //go:generate rm -f canton/draw_all.go
-//go:generate go run canton/gen/cantongen.go
+//go:generate go run canton/gen/gen.go
 
 func main() {
 	SetConfigFlags(FlagWindowResizable)
